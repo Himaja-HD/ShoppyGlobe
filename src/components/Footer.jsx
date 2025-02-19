@@ -2,8 +2,11 @@ import React from 'react';
 
 const Footer = () => {
   return (
+    // Footer
     <footer className="bg-gray-500 text-white p-6 mt-[620px] bottom-0">
       <div className="flex flex-col md:flex-row justify-between items-center md:items-start">
+        
+        {/* Location */}
         <div className="mb-6">
           <h2 className="text-xl lg:text-4xl font-semibold mb-4">Find Us</h2>
           <iframe
@@ -16,36 +19,42 @@ const Footer = () => {
           ></iframe>
         </div>
 
-        {/* Social-Media*/}
+        {/* Social */}
         <div className="flex flex-col justify-center space-x-6 mt-10 relative lg:right-10 gap-6">
-         <h1 className='text-2xl relative lg:right-40 '>Connect with us:
-         </h1>
+         <h1 className='text-2xl relative lg:right-40 '>Connect with us:</h1>
          <div className='flex flex-row lg:flex-col gap-6 lg:right-30'>
+          
+          {/* Facebook */}
           <a
             href="https://facebook.com"
-            className="text-xl w-12 h-12 flex items-center justify-center
-             text-gray-800 rounded-full p-3 bg-gray-50 hover:text-gray-500"
+            className="text-xl w-12 h-12 flex items-center justify-center text-gray-800 rounded-full p-3 bg-gray-50 hover:text-gray-500"
           >
             <i className="fab fa-facebook-f"></i>
           </a>
+
+          {/* Twitter */}
           <a
             href="https://twitter.com"
             className="text-xl w-12 h-12 flex items-center justify-center text-gray-800 rounded-full p-3 bg-gray-50 hover:text-gray-500"
           >
             <i className="fab fa-twitter"></i>
           </a>
+
+          {/* Instagram */}
           <a
             href="https://instagram.com"
             className="text-xl w-12 h-12 flex text-gray-800 items-center justify-center rounded-full p-3 bg-gray-50 hover:text-gray-500"
           >
             <i className="fab fa-instagram"></i>
           </a>
+
           </div>
         </div>
       </div>
 
+      {/* Copyright */}
       <div className="text-center mt-6">
-        <p>&copy; 2025 Your Company. All rights reserved.</p>
+        <p>&copy;All rights reserved.</p>
       </div>
     </footer>
   );

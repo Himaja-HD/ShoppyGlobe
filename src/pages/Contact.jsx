@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const Contact = () => {
+  // State
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -10,6 +11,7 @@ const Contact = () => {
 
   const [isFormValid, setIsFormValid] = useState(true);
 
+  // Handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -18,6 +20,7 @@ const Contact = () => {
     }));
   };
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.phone || !formData.email || !formData.feedback) {
@@ -34,6 +37,8 @@ const Contact = () => {
       <h2 className="text-center text-4xl font-extrabold text-white mb-6">Feedback</h2>
 
       <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md space-y-6">
+        
+        {/* Name */}
         <div className="flex flex-col">
           <label htmlFor="name" className="text-sm font-semibold text-gray-700 mb-2">Name:</label>
           <input
@@ -48,6 +53,7 @@ const Contact = () => {
           />
         </div>
 
+        {/* Phone */}
         <div className="flex flex-col">
           <label htmlFor="phone" className="text-sm font-semibold text-gray-700 mb-2">Phone:</label>
           <input
@@ -62,6 +68,7 @@ const Contact = () => {
           />
         </div>
 
+        {/* Email */}
         <div className="flex flex-col">
           <label htmlFor="email" className="text-sm font-semibold text-gray-700 mb-2">Email:</label>
           <input
@@ -76,6 +83,7 @@ const Contact = () => {
           />
         </div>
 
+        {/* Feedback */}
         <div className="flex flex-col">
           <label htmlFor="feedback" className="text-sm font-semibold text-gray-700 mb-2">Feedback:</label>
           <textarea
@@ -90,10 +98,12 @@ const Contact = () => {
           />
         </div>
 
+        {/* Validation */}
         {!isFormValid && (
           <div className="text-red-500 text-sm mb-4">Please fill out all fields.</div>
         )}
 
+        {/* Button */}
         <button
           type="submit"
           className="w-full bg-gray-600 text-white py-3 rounded-lg hover:bg-gray-800 transition duration-300"
@@ -106,4 +116,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Contact; // Export

@@ -5,13 +5,17 @@ import { addToCart, removeFromCart } from "../redux/cartSlice";
 import CartDropdown from "./CartDropdown";
 
 const Header = () => {
+  // State
   const [isOrange, setIsOrange] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Redux
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
   const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
+  // Effect
   useEffect(() => {
     const interval = setInterval(() => {
       setIsOrange((prev) => !prev);
@@ -21,13 +25,17 @@ const Header = () => {
   }, []);
 
   return (
+    // Header
     <header className="bg-gray-800 sticky top-0 z-15 text-white h-20 p-4 flex justify-between items-center">
+      
+      {/* Logo */}
       <h1 className="text-xl font-bold flex items-center gap-2">
         <span className="first-letter:text-yellow-400 first-letter:text-3xl">Shoppy</span>
         <span className="first-letter:text-yellow-400 first-letter:text-3xl">Globe</span>
         <i className={`fas fa-globe ${isOrange ? "text-yellow-400" : "text-white"}`}></i>
       </h1>
 
+      {/* Navigation */}
       <nav
         className={`absolute top-20 left-0 w-full bg-gray-700 z-12
           sm:static sm:flex sm:w-auto sm:bg-transparent transition-transform ${
@@ -41,10 +49,15 @@ const Header = () => {
         </ul>
       </nav>
 
+      {/* Actions */}
       <div className="flex flex-row-reverse items-center gap-3">
+
+        {/* Menu */}
         <button className="sm:hidden text-white text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
           <i className="fas fa-bars"></i>
         </button>
+
+        {/* Cart */}
         <div className="relative">
           <button onClick={() => setShowCart(!showCart)} className="relative p-2 bg-gray-700 rounded-full">
             <i className="fas fa-shopping-cart text-xl"></i>
@@ -56,6 +69,8 @@ const Header = () => {
           </button>
         </div>
       </div>
+
+      {/* Dropdown */}
       {showCart && (
         <CartDropdown 
           cartItems={cartItems} 
@@ -63,6 +78,7 @@ const Header = () => {
           onRemove={(id) => dispatch(removeFromCart(id))} 
         />
       )}
+      
     </header>
   );
 };
