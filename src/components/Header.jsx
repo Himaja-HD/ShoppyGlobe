@@ -30,9 +30,11 @@ const Header = () => {
       
       {/* Logo */}
       <h1 className="text-xl font-bold flex items-center gap-2">
+      <Link to="/" className="flex items-center gap-2"> 
         <span className="first-letter:text-yellow-400 first-letter:text-3xl">Shoppy</span>
         <span className="first-letter:text-yellow-400 first-letter:text-3xl">Globe</span>
         <i className={`fas fa-globe ${isOrange ? "text-yellow-400" : "text-white"}`}></i>
+      </Link>
       </h1>
 
       {/* Navigation */}

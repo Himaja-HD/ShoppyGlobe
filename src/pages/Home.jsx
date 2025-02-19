@@ -84,7 +84,7 @@ const Home = () => {
       </button> {/* Contact */}
 
       <div className="relative p-6 w-full mt-12">
-        <h1 className="text-2xl font-bold text-center mb-6">Shop by Category</h1>
+        <h1 className="text-4xl text-gray-700 font-bold text-center mb-12">Shop by Category</h1>
         <CategoryCard categories={categories} />
       </div> {/* Categories */}
     </div>

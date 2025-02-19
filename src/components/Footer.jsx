@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
   return (
     // Footer
-    <footer className="bg-gray-500 text-white p-6 mt-[620px] bottom-0">
+    <footer className="bg-gray-500 text-white p-6">
       <div className="flex flex-col md:flex-row justify-between items-center md:items-start">
         
         {/* Location */}

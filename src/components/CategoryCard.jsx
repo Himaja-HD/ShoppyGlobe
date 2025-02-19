@@ -12,7 +12,7 @@ const CategoryCard = ({ categories }) => {
 
   return (
     // Grid
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative lg:min-h-[600px]">
       {categories.map((category, index) => {
         // Position
         const positionClass =
@@ -29,7 +29,9 @@ const CategoryCard = ({ categories }) => {
           <div
             key={index}
             onClick={() => handleCategoryClick(category.name)}
-            className={`relative lg:absolute flex flex-col items-center bg-transparent shadow-lg rounded-lg p-3 transition-transform transform hover:scale-105 cursor-pointer ${positionClass}`}
+            className={`relative lg:absolute flex flex-col items-center bg-transparent 
+                        shadow-lg rounded-lg p-3 transition-transform transform 
+                        hover:scale-105 cursor-pointer ${positionClass}`}
           >
             {/* Image */}
             <img
@@ -38,7 +40,7 @@ const CategoryCard = ({ categories }) => {
               className="w-[250px] h-[300px] object-cover rounded-lg border-2 border-gray-200"
             />
             {/* Details */}
-            <div className="flex justify-between items-center w-full mt-2">
+            <div className="flex justify-between items-center w-3/4 mt-2">
               {/* Name */}
               <h2 className="text-lg font-semibold text-gray-700">{category.name}</h2>
               {/* Arrow */}
